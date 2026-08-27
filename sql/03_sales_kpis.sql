@@ -2,6 +2,7 @@
 -- SQL Module: 03_sales_kpis.sql
 -- ============================================================================
 
+-- Basic KPIs
 -- QUERY:
 SELECT SUM(revenue) AS total_revenue,
 	COUNT(DISTINCT transaction_id) AS transactions,
@@ -16,3 +17,33 @@ FROM coffee_sales
 -- Average transaction value: 4.69
 -- Average unit price: 3.38
 
+-- Revenue by month
+-- QUERY:
+SELECT
+    DATE_TRUNC('month', transaction_date) AS month,
+    SUM(revenue) AS revenue
+FROM coffee_sales
+GROUP BY 1
+ORDER BY 1
+
+-- Month-over-month growth
+-- QUERY:
+WITH monthly_sales AS (
+    SELECT
+        DATE_TRUNC('month', transaction_date) AS month,
+        SUM(revenue) AS revenue
+    FROM coffee_sales
+    GROUP BY 1
+)
+
+SELECT
+    month,
+    revenue,
+    LAG(revenue) OVER (ORDER BY month) AS previous_month_revenue,
+    ROUND(
+        100.0 * (revenue - LAG(revenue) OVER (ORDER BY month))
+        / NULLIF(LAG(revenue) OVER (ORDER BY month), 0),
+        2
+    ) AS mom_growth_pct
+FROM monthly_sales
+ORDER BY month
