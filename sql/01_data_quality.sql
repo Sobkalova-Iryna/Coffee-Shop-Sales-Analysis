@@ -42,13 +42,23 @@ WHERE transaction_qty <= 0
 -- Checking unique categories
 -- QUERY: 
 SELECT
-    product_detail,
+    product_category,
     COUNT(*) AS row_count
 FROM coffee_sales_raw
-GROUP BY product_detail
+GROUP BY product_category
 ORDER BY row_count DESC
 
 -- The table contains nine unique product categories. The categories are recorded correctly. The "Coffee" category has the highest number of transactions.
 -- Similarly, we check the store_location, product_type, and product_detail columns.
 -- We check the store_location, product_type, and product_detail columns in the same way. 
 -- The table has three unique store locations, twenty-nine unique product types and eighty product details.
+
+-- Check for gaps
+-- QUERY: 
+SELECT DISTINCT
+    '[' || product_category || ']' AS category
+FROM coffee_sales_raw
+ORDER BY category;
+
+-- Just as the `product_category` was checked in the query, we check the `store_location`, `product_type`, and `product_detail` columns.
+-- No extra spaces were found during the check.
