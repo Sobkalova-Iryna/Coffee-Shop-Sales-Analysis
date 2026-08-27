@@ -1,6 +1,5 @@
 -- ============================================================================
--- SQL Module: 02_sales_kpis.sql
--- Purpose: 
+-- SQL Module: 02_data_preparation.sql
 -- ============================================================================
 
 -- QUERY:
@@ -24,3 +23,6 @@ SELECT
     EXTRACT(DOW FROM transaction_date) AS day_of_week,
     EXTRACT(HOUR FROM transaction_time) AS hour
 FROM coffee_sales_raw
+
+-- A separate analytical view was created based on the raw transaction data. 
+-- The view contains calculated revenue and additional time-related attributes used for further analysis.
