@@ -19,3 +19,14 @@ ORDER BY revenue DESC
 
 -- Purpose: comparison of the store's share of total revenue.
 -- QUERY:
+SELECT
+    store_location,
+    SUM(revenue) AS revenue,
+    ROUND(
+        100.0 * SUM(revenue)
+        / SUM(SUM(revenue)) OVER (),
+        2
+    ) AS revenue_share_pct
+FROM coffee_sales
+GROUP BY store_location
+ORDER BY revenue DESC
