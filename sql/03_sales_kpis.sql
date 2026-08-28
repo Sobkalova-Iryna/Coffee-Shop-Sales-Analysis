@@ -26,6 +26,9 @@ FROM coffee_sales
 GROUP BY 1
 ORDER BY 1
 
+-- Revenue showed an overall increasing trend during the analyzed period, with the exception of the second month. 
+-- The highest monthly revenue was recorded in June, while the lowest was observed in February.
+	
 -- Month-over-month growth
 -- QUERY:
 WITH monthly_sales AS (
@@ -47,3 +50,7 @@ SELECT
     ) AS mom_growth_pct
 FROM monthly_sales
 ORDER BY month
+
+-- In February, revenue decreased by 6.77% compared to the previous month. Strong revenue growth was observed from March to May. 
+-- The highest growth, at 31.77%, occurred in May. Growth continued in June, albeit at a rate of only 6.23%.
+
