@@ -2,7 +2,7 @@
 -- SQL Module: 06_time_analysis.sql
 -- ============================================================================
 
--- Purpose:
+-- Purpose: Comparison of revenue, number of transactions, and average transaction value by hour.
 -- QUERY:
 SELECT
     EXTRACT(HOUR FROM transaction_time) AS hour,
@@ -27,7 +27,7 @@ ORDER BY 1
 -- Revenue declines sharply after the morning peak as transaction volume decreases, 
 -- while average transaction value remains relatively stable throughout the day.
 
--- Purpose:
+-- Purpose: Comparison of revenue, number of transactions, and average transaction value by day of the week.
 -- QUERY:
 SELECT
     TO_CHAR(transaction_date, 'Day') AS weekday,
@@ -47,7 +47,7 @@ ORDER BY EXTRACT(DOW FROM transaction_date)
 -- The similar revenue levels despite different transaction volumes indicate a slightly higher average transaction value on Monday.
 -- Saturday had the lowest revenue and transaction volume, making it the weakest day in terms of overall sales activity.
   
--- Purpose:
+-- Purpose: Comparison of revenue, number of transactions, and average transaction value by hour and day of the week.
 -- QUERY:
 SELECT
     TO_CHAR(transaction_date, 'FMDay') AS weekday,
