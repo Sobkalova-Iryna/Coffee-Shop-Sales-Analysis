@@ -49,4 +49,6 @@ SELECT
 FROM ranked
 ORDER BY revenue DESC
 
---
+-- Revenue is relatively distributed across the product assortment rather than being highly concentrated in a small number of products.
+-- Approximately 55% of products generate 80% of total revenue. No single product dominates total revenue. 
+-- The highest-revenue product accounts for only approximately 3% of total revenue.
