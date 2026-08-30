@@ -53,6 +53,7 @@ ORDER BY revenue DESC
 -- Approximately 55% of products generate 80% of total revenue. No single product dominates total revenue. 
 -- The highest-revenue product accounts for only approximately 3% of total revenue.
 
+-- Purpose: product analysis at the product type level.
 -- QUERY:
 WITH products AS (
     SELECT
@@ -83,6 +84,7 @@ SELECT
 FROM ranked
 ORDER BY revenue DESC
 
+-- Purpose: product analysis at the product category level.
 -- QUERY:
 WITH products AS (
     SELECT
