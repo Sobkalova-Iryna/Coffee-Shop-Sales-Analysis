@@ -42,7 +42,7 @@ FROM ranked
 WHERE rank <= 5
 ORDER BY store_location, rank
 
--- Purpose: determining the top product types for each store
+-- Purpose: determining the top product categories for each store
 -- QUERY:
 WITH category_store_sales AS (
     SELECT
