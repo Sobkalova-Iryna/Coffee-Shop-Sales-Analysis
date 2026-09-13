@@ -15,6 +15,16 @@ The project covers the full analytical workflow:
 - Business insights and recommendations
 
 
+## Tech Stack
+
+- PostgreSQL
+- SQL
+- Python (Pandas, NumPy)
+- Power BI
+- DAX
+- Git & GitHub
+
+
 ## Dashboard Preview
 
 ### Sales Overview
@@ -94,11 +104,11 @@ The analysis aims to answer the following questions:
 ### 1. Data Quality Check
 The dataset was checked for:
 
-Missing values
-Duplicate records
-Unique transaction IDs
-Data types
-Dataset dimensions
+- Missing values
+- Duplicate records
+- Unique transaction IDs
+- Data types
+- Dataset dimensions
 
 No missing values or duplicate rows were identified.
 
@@ -107,10 +117,10 @@ The date and time fields were initially stored as strings and were converted to 
 ### 2. Data Preparation
 The following transformations were performed:
 
-Converted transaction_date to datetime format
-Converted transaction_time to datetime format
-Extracted the transaction hour
-Calculated transaction revenue
+- Converted transaction_date to datetime format
+- Converted transaction_time to datetime format
+- Extracted the transaction hour
+- Calculated transaction revenue
 
 Revenue was calculated as:
 Revenue = Transaction Quantity × Unit Price
@@ -125,29 +135,29 @@ PostgreSQL was used for the main analytical calculations and business-oriented a
 The SQL analysis included:
 
 ### KPI Analysis
-Total revenue
-Total transactions
-Average transaction value
-Average unit price
+- Total revenue
+- Total transactions
+- Average transaction value
+- Average unit price
 
 ### Time Analysis
-Monthly revenue
-Revenue and transactions by weekday
-Revenue and transactions by hour
-Hour × weekday analysis
+- Monthly revenue
+- Revenue and transactions by weekday
+- Revenue and transactions by hour
+- Hour × weekday analysis
 
 ### Store Analysis
-Revenue by store
-Transactions by store
-Average transaction value by store
+- Revenue by store
+- Transactions by store
+- Average transaction value by store
 
 ### Product Analysis
-Revenue by product category
-Revenue by product type
-Product type contribution to total revenue
-Cumulative revenue by product type
-Product performance by store
-Product category performance by store
+- Revenue by product category
+- Revenue by product type
+- Product type contribution to total revenue
+- Cumulative revenue by product type
+- Product performance by store
+- Product category performance by store
 
 
 ## Exploratory Data Analysis with Python
@@ -159,11 +169,11 @@ The EDA focuses mainly on transaction-level patterns and data distributions.
 ### Transaction Revenue
 The distribution of transaction revenue was analyzed using:
 
-Mean
-Median
-Quartiles
-Distribution shape
-Outlier analysis
+- Mean
+- Median
+- Quartiles
+- Distribution shape
+- Outlier analysis
 
 The analysis showed a right-skewed distribution of transaction revenue, indicating that a relatively small number of higher-value transactions increase the average transaction value.
 
@@ -190,48 +200,47 @@ The Power BI report transforms the analytical results into an interactive busine
 The Sales Overview dashboard provides a high-level view of business performance.
 
 ### Key metrics
-Total Revenue
-Total Transactions
-Average Transaction Value
-Average Items per Transaction
-Average Unit Price
+- Total Revenue
+- Total Transactions
+- Average Transaction Value
+- Average Items per Transaction
+- Average Unit Price
 
 ### Visual analysis
-Revenue by month
-Revenue by store
-Revenue by weekday
-Revenue by hour
-Revenue by product category
-Transaction-level revenue distribution
+- Revenue by month
+- Revenue by store
+- Revenue by weekday
+- Revenue by hour
+- Revenue by product category
+- Transaction-level revenue distribution
 
 Interactive filters allow users to explore the results by:
-Date
-Store
-Product Category
-Product Type
+- Date
+- Store
+- Product Category
+- Product Type
 
 ### Dashboard 2 — Product & Sales Performance
 
 The second dashboard focuses on product performance and revenue concentration.
 
 It includes:
-Top 10 Product Types by Revenue
-Revenue contribution by product type
-Cumulative Revenue %
-Revenue by Store & Product Category
-Monthly Revenue MoM %
-Product and store filters
+- Top 10 Product Types by Revenue
+- Revenue contribution by product type
+- Cumulative Revenue %
+- Revenue by Store & Product Category
+- Monthly Revenue MoM %
+- Product and store filters
 
 ### DAX Measures
 DAX was used for dynamic business metrics, including:
-Total Revenue
-Total Transactions
-Average Transaction Value
-Average Items per Transaction
-Revenue Contribution %
-Revenue MoM %
-Product Ranking
-Cumulative Revenue %
+- Total Transactions
+- Average Transaction Value
+- Average Items per Transaction
+- Revenue Contribution %
+- Revenue MoM %
+- Product Ranking
+- Cumulative Revenue %
 
 
 ## Key Findings
