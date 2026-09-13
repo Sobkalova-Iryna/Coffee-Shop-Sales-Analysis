@@ -297,22 +297,22 @@ Monitor the performance of high-contribution product types across individual sto
 ```text
 coffee-sales-analysis/
 │
-├── README.md
-│
 ├── data/
 │   └── coffee_sales.csv
 │
-├── sql/
-│   └── coffee_sales_analysis.sql
+├── power_bi/
+│   ├── coffee_sales_dashboard.pbix
+│   └── screenshots/
+│       ├── sales_overview.png
+│       └── product_performance.png
 │
 ├── python/
 │   └── coffee_sales_eda.ipynb
 │
-└── power_bi/
-    ├── coffee_sales_dashboard.pbix
-    └── screenshots/
-        ├── sales_overview.png
-        └── product_performance.png
+├── sql/
+│   └── coffee_sales_analysis.sql
+│
+├── README.md
 ```
 ## Conclusion
 
