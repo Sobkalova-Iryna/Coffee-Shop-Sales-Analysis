@@ -101,7 +101,7 @@ The analysis aims to answer the following questions:
 
 ## Analysis Workflow
 
-### 1. Data Quality Check
+### Data Quality Check
 The dataset was checked for:
 
 - Missing values
@@ -114,7 +114,7 @@ No missing values or duplicate rows were identified.
 
 The date and time fields were initially stored as strings and were converted to appropriate datetime formats before further analysis.
 
-### 2. Data Preparation
+### Data Preparation
 The following transformations were performed:
 
 - Converted transaction_date to datetime format
@@ -128,30 +128,30 @@ Revenue = Transaction Quantity × Unit Price
 The transformed data was validated and confirmed to be ready for analysis.
 
 
-## SQL Analysis
+### SQL Analysis
 
 PostgreSQL was used for the main analytical calculations and business-oriented aggregation.
 
 The SQL analysis included:
 
-### KPI Analysis
+#### KPI Analysis
 - Total revenue
 - Total transactions
 - Average transaction value
 - Average unit price
 
-### Time Analysis
+#### Time Analysis
 - Monthly revenue
 - Revenue and transactions by weekday
 - Revenue and transactions by hour
 - Hour × weekday analysis
 
-### Store Analysis
+#### Store Analysis
 - Revenue by store
 - Transactions by store
 - Average transaction value by store
 
-### Product Analysis
+#### Product Analysis
 - Revenue by product category
 - Revenue by product type
 - Product type contribution to total revenue
@@ -160,13 +160,13 @@ The SQL analysis included:
 - Product category performance by store
 
 
-## Exploratory Data Analysis with Python
+### Exploratory Data Analysis with Python
 
 Python was used to perform exploratory analysis that complements the SQL analysis rather than duplicating it.
 
 The EDA focuses mainly on transaction-level patterns and data distributions.
 
-### Transaction Revenue
+#### Transaction Revenue
 The distribution of transaction revenue was analyzed using:
 
 - Mean
@@ -177,36 +177,36 @@ The distribution of transaction revenue was analyzed using:
 
 The analysis showed a right-skewed distribution of transaction revenue, indicating that a relatively small number of higher-value transactions increase the average transaction value.
 
-### Transaction Quantity
+#### Transaction Quantity
 The distribution of items sold per transaction was analyzed to understand typical transaction size.
 
-### Quantity vs Revenue
+#### Quantity vs Revenue
 The relationship between transaction quantity and transaction revenue was examined.
 
 As expected, transactions containing more items generally generate higher revenue. This relationship should be interpreted carefully because transaction revenue is calculated using transaction quantity and unit price.
 
-### Unit Price vs Transaction Quantity
+#### Unit Price vs Transaction Quantity
 Average unit price was also analyzed across different transaction quantities.
 
 Higher-quantity transactions tend to have lower average unit prices, which may indicate differences in product mix rather than discounts, since discount information is not available in the dataset.
 
 
-## Power BI Dashboard
+### Power BI Dashboard
 
 The Power BI report transforms the analytical results into an interactive business reporting layer.
 
-### Dashboard 1 — Sales Overview
+#### Dashboard 1 — Sales Overview
 
 The Sales Overview dashboard provides a high-level view of business performance.
 
-### Key metrics
+#### Key metrics
 - Total Revenue
 - Total Transactions
 - Average Transaction Value
 - Average Items per Transaction
 - Average Unit Price
 
-### Visual analysis
+#### Visual analysis
 - Revenue by month
 - Revenue by store
 - Revenue by weekday
@@ -220,7 +220,7 @@ Interactive filters allow users to explore the results by:
 - Product Category
 - Product Type
 
-### Dashboard 2 — Product & Sales Performance
+#### Dashboard 2 — Product & Sales Performance
 
 The second dashboard focuses on product performance and revenue concentration.
 
@@ -232,7 +232,7 @@ It includes:
 - Monthly Revenue MoM %
 - Product and store filters
 
-### DAX Measures
+#### DAX Measures
 DAX was used for dynamic business metrics, including:
 - Total Transactions
 - Average Transaction Value
